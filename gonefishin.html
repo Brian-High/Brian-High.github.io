@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Gone Fishin'</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+        </div>
+    </header>
+
+    <div id="home">
+        <home>
+            <a href="index.html" class="button primary fit">Home</a>
+        </home>
+    </div>
+    <!-- Main -->
+    <div id="main">
+        <section>
+            <h1 style="margin-bottom: 0; color: black; font-size: xxx-large;">Gone Fishin'</h1>
+            <h4>Professional Application - <a href="https://www.ideum.com/about" target="_blank"> Ideum </a></h4>
+        </section>
+        <!-- Two -->
+        <section id="one" style="margin: 2em 0 0 0; padding: 2em 0 0 0;">
+            <h5 style="text-align: center;">Unity &nbsp;<span>&#183;</span> &nbsp; C#/.NET </h5>
+            <h5 style="text-align: center;">Content Management System &nbsp;<span>&#183;</span>&nbsp; Google
+                Sheets/Drive API
+                &nbsp;<span>&#183;</span> &nbsp; Shaders &nbsp;<span>&#183;</span>&nbsp; Path Finding
+            </h5>
+
+            <h2 style="margin: 0 0 0.5em 0; color: black;">Objective:</h2>
+            <p> Create and educational and interactive program that runs on a touchscreen and wall mount display. This
+                application was a remake of an existing exhibit at the Fort Worth Zoo from the 80s. The goal was to make
+                this exhibit simpler and convey Texas's unique rules and regulations of in a concise manner. Note: at
+                the time of my leaving Ideum, the final assets where still being designed so the visuals here reflect
+                placeholder assets
+            </p>
+
+            <h2 style="margin: 0 0 0.5em 0; color: black;">Design:</h2>
+            <p style="font-size: 12pt;"> The original exhibit had a physical pond with fish cut outs that
+                visitors could catch with real fishing poles. This exhibit would often break and did not convey
+                the information in a fun and concise manner. The new program used a virtual pond on a touch
+                screen where users touch to "cast" a bobber and the fish would path find to the bobber. After a
+                fish has been "caught" a card is displayed on a second monitor displaying important information.
+            </p>
+
+
+            <div class="row">
+
+                <article class="col-6 col-12-xxsmall work-item " style="padding: 0 0 0 2em;">
+                    <h1></h1>
+                    <a class="image fit thumb"><img src="images/GoneFishin/FishinCards.gif" width="100%" height="50%"
+                            alt="" /></a>
+                </article>
+                <article class="col-6 col-12-xsmall work-item " style="padding: 0 0 0 2em;">
+                    <h1></h1>
+                    <a class="image fit thumb"><img src="images/GoneFishin/GoneFishin.gif" width="100%" height="50%"
+                            alt="" /></a>
+                </article>
+            </div>
+
+            <article class="col-6 col-12-xsmall work-item">
+                <h2 style="margin: 0 0 0.5em 0; color: black;">Content Management System (CMS)</h2>
+                <p style="font-size: 12pt;"> This program was designed use to dynamic data so the client can to change
+                    the content of the app after it is deployed. Using the <a href="https://www.ideum.com/about"
+                        target="_blank">Ideum</a> custom dev stack, I was able to leverage the Google Sheets and Google
+                    Drive API to pull in text and image data from the cloud. The Ideum Sheets API converts the a google
+                    sheet's rows into a list of delimited strings where the text data and media URLs can be extracted.
+                    Then the media URLs are then passed to the Drive API where the file is downloaded to appdata and
+                    information like the file name and extension can be accessed. This text data and media file
+                    information is then Serialized into a JSON file using the NewtonSoft JSON serializer. After this
+                    process has been done once, all the data is stored locally and only needs to be pulled when content
+                    is updated.
+                </p>
+            </article>
+
+            <div class="row">
+                <article class="col-6 col-12-xsmall work-item " style="padding: 0 0 0 2em;">
+                    <h1></h1>
+                    <a class="image fit thumb" style="height: 50%;"><video src="images/GoneFishin/shader.mp4" width="100%" height="100%" loop
+                            autoplay style="padding-top: 0.25em;" alt="" /></a>
+                </article>
+                <article class="col-6 col-12-xsmall work-item ">
+                    <h2 style="margin: 0 0 0.5em 0; color: black;">Shaders:</h2>
+                    <p style="font-size: 12pt;"> The water effect in pond was achieve using multiple shaders in
+                        conjunction with a render texture. There was a 3D mesh in a plane that was deformed by a vertex
+                        shader to give the effect of waves. A separate component of the shader would respond to touch
+                        points and create ripples that deformed the mesh too. Finally, a separate pixel shader would
+                        create the water shifting and glare effect by modifying the color with some math. These shaders
+                        were then applied render texture that is an overlay on the pond.
+                    </p>
+                </article>
+
+            </div>
+            <div class="row">
+                <div class="col-4-small col-12-small">
+                    <ul class="actions">
+                        <li><a href="index.html" class="button">Back To Home</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4-small col-12-small">
+                    <ul class="actions">
+                        <li><a href="fullportfolio.html" class="button">Full Portfolio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Three -->
+        <section id="three">
+            <h2>Contact Me</h2>
+            <div class="row">
+
+                <div class="col-4 col-12-small">
+                    <ul class="labeled-icons">
+                        <li>
+                            <h3 class="icon solid fa-home"><span class="label">Location</span></h3>
+                            Albuquerque, New Mexico<br />
+
+                        </li>
+                        <li>
+                            <h3 class="icon solid fa-download"><span class="label">Resume</span></h3>
+                            <a href="Resume Technical 2022-2.pdf" target="_blank"> My Resume</a>
+                        </li>
+                        <li>
+                            <h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
+                            <a href="tel:505-485-7337">(505) 485-7337</a>
+                        </li>
+                        <li>
+                            <h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+                            <a href="#">42002bjh@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
