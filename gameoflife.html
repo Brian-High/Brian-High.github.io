@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Conway's Game of Life</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+        </div>
+    </header>
+
+    <div id="home">
+        <home>
+            <a href="index.html" class="button primary fit">Home</a>
+        </home>
+    </div>
+    <!-- Main -->
+    <div id="main">
+        <section>
+            <h1 style="margin-bottom: 0; color: black; font-size: xxx-large;">Conway's Game of Life</h1>
+            <h4>Personal Project</h4>
+        </section>
+        <!-- Two -->
+        <section id="one" style="margin: 2em 0 0 0; padding: 2em 0 0 0;">
+            <h5 style="text-align: center;">Java &nbsp;<span>&#183;</span> &nbsp; JavaFX </h5>
+            <h5 style="text-align: center;">Memory Optimization &nbsp;<span>&#183;</span>&nbsp; Run-Length Encoding
+                &nbsp;<span>&#183;</span> &nbsp; File I/O &nbsp;<span>&#183;</span>&nbsp; Complexity Theory
+
+            </h5>
+            <h2 style="margin: 0 0 0.5em 0; color: black;">Objective:</h2>
+            <p> Emulate the famous cellular automata Conway's Game of Life. This is the second attempt I made at this
+                project and it was greatly improved in the second version. I became interested in this topic because of
+                it's relation to complexity theory - how complex structures can emerge from simple rules. If you are
+                unfamiliar, the rules can be found <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life#Rules"
+                    target="_blank">here</a>.
+
+            </p>
+            <h2 style="margin: 0 0 0.5em 0; color: black;">Program Design:</h2>
+            <div class="row">
+                <article class="col-6 col-12-xsmall work-item ">
+                    <p style="font-size: 12pt;"> The program is a 2D grid of cells that can be turn on or off and a
+                        control bar. The visual part of the part is a canvas that the program draws onto using a
+                        coordinate system. The user can use the mouse to create a pattern or import a pattern from this
+                        <a href="https://copy.sh/life/" target="_blank">website</a>. Users can pause or play the
+                        simulation, changes the
+                        speed the simulation runs, clear the board, or randomize the simulation (turning random cells
+                        on).
+                    </p>
+                </article>
+                <article class="col-6 col-12-small work-item " style="padding: 0 0 0 2em;">
+                    <h1></h1>
+                    <a class="image fit thumb"><img src="images/GameOfLife/GameOfLife.gif" alt="" /></a>
+                </article>
+
+            </div>
+            <div class="row">
+                <article class="col-6 col-12-xsmall work-item">
+                    <a class="image fit thumb"><img src="images/GameOfLife/FileIO.gif" alt="" /></a>
+                </article>
+
+                <article class="col-6 col-12-xsmall work-item">
+                    <h2 style="margin: 0 0 0.5em 0; color: black;">Run-Length Encoding (RLE)</h2>
+                    <p style="font-size: 12pt;"> Run-Length Encoding is a popular compression method that is useful when
+                        data has long stretches of data that is the same. For example, “wwwwaaadexxxxxx” would be
+                        encoded as
+                        “w4a3d1e1x6”. This format works well when exporting board states from this program because there
+                        are
+                        only two states for each cell, and there are typically long stretches of the same state. The
+                        best
+                        part of the Game of Life is the large and complex patterns that can do various things. In order
+                        run
+                        these
+                        patterns I created a decoder for the rle format so that I could import files from this
+                        <a href="https://copy.sh/life/" target="_blank">website</a>.
+                    </p>
+                </article>
+            </div>
+
+            <article class="col-6 col-12-xsmall work-item">
+                <h2 style="margin: 0 0 0.5em 0; color: black;">What I Learned:</h2>
+                <p style="font-size: 12pt;"> The original version of this program was slow and inefficient at large
+                    scales (100 x 100 and larger boards). I used a tool called Visual VM to analyze the performance of
+                    the program and I identified memory to be the limiting factor. The reason why the program was using
+                    so much memory was because I was storing the state and position of each cell along with the visual
+                    component. The
+                    new version of the program only stored the position and state and the visual component drawn onto a
+                    canvas. By switching out a large array of buttons with a canvas and not storing the unnecessary
+                    visual data,
+                    the new version of the program became much faster.
+                </p>
+            </article>
+
+
+            <div class="row">
+                <div class="col-4-small col-12-small">
+                    <ul class="actions">
+                        <li><a href="index.html" class="button">Back To Home</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4-small col-12-small">
+                    <ul class="actions">
+                        <li><a href="fullportfolio.html" class="button">Full Portfolio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Three -->
+        <section id="three">
+            <h2>Contact Me</h2>
+            <div class="row">
+
+                <div class="col-4 col-12-small">
+                    <ul class="labeled-icons">
+                        <li>
+                            <h3 class="icon solid fa-home"><span class="label">Location</span></h3>
+                            Albuquerque, New Mexico<br />
+
+                        </li>
+                        <li>
+                            <h3 class="icon solid fa-download"><span class="label">Resume</span></h3>
+                            <a href="Resume Technical 2022-2.pdf" target="_blank"> My Resume</a>
+                        </li>
+                        <li>
+                            <h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
+                            <a href="tel:505-485-7337">(505) 485-7337</a>
+                        </li>
+                        <li>
+                            <h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+                            <a href="#">42002bjh@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
