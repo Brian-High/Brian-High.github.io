@@ -1,22 +1,19 @@
 <!DOCTYPE HTML>
-
 <html>
 
 <head>
-    <title>Disease Simulation</title>
+    <title>The Impossible Game</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body class="is-preload">
-
     <!-- Header -->
     <header id="header">
         <div class="inner">
         </div>
     </header>
-
     <div id="home">
         <home>
             <a href="index.html" class="button primary fit">Home</a>
@@ -25,57 +22,66 @@
     <!-- Main -->
     <div id="main">
         <section>
-            <h1 style="margin-bottom: 0; color: black; font-size: xxx-large;">Disease Simulation</h1>
-            <h4>School Project</h4>
+            <h1 style="margin-bottom: 0; color: black; font-size: xxx-large;">The Impossible Game</h1>
+            <h4>Personal Project</h4>
         </section>
         <!-- Two -->
         <section id="one" style="margin: 2em 0 0 0; padding: 2em 0 0 0;">
-            <h5 style="text-align: center;">Java &nbsp;<span>&#183;</span> &nbsp; JavaFX</h5>
-            <h5 style="text-align: center;"> Muli-threading &nbsp;<span>&#183;</span>&nbsp; Concurrency
-                &nbsp;<span>&#183;</span> &nbsp; Liveness &nbsp;<span>&#183;</span>&nbsp; Collaborative Project
-
+            <h5 style="text-align: center;">Java &nbsp;<span>&#183;</span> &nbsp; JavaFx </h5>
+            <h5 style="text-align: center;">Custom Level Editor &nbsp;<span>&#183;</span>&nbsp; File I/O
+                &nbsp;<span>&#183;</span> &nbsp; Game Objects
             </h5>
+
             <h2 style="margin: 0 0 0.5em 0; color: black;">Objective:</h2>
-            <p> Create a 2D disease simulation with several variable parameters and data visualizations. The main
-                goal of this program with to allow each agent to run on its own thread as an introduction to
-                concurrency.
+            <p> Emulate the popular flash game The Impossible Game. The goal was to create a visually and functionally
+                identical game with multiple levels. I determined that hard-coding these levels would take far too long
+                so I also developed a level editor.
             </p>
+
             <h2 style="margin: 0 0 0.5em 0; color: black;">Design:</h2>
             <div class="row">
                 <article class="col-6 col-12-xsmall work-item ">
-                    <p style="font-size: 12pt;"> Each agent runs on its own thread and only can communicate to their
-                        immediate neighbor. Agents use a blocking queue to avoid liveness problems and communicate with
-                        the main thread to determine their neighbors. Each of the data visualizations were run on the
-                        main thread and each agent communicated its state to the main thread. Agents move at constant
-                        velocity and change their heading by a random amount. If an agent went out of bounds its heading
-                        would be flipped by 180 degrees.
+                    <p style="font-size: 12pt;"> The original exhibit had a physical pond with fish cut outs that
+                        visitors could catch with real fishing poles. This exhibit would often break and did not convey
+                        the information in a fun and concise manner. The new program used a virtual pond on a touch
+                        screen where users touch to "cast" a bobber and the fish would path find to the bobber. After a
+                        fish has been "caught" a card is displayed on a second monitor displaying important information.
                     </p>
+                </article>
+                <article class="col-6 col-12-xxsmall work-item " style="padding: 0 0 0 2em;">
+                    <h1></h1>
+                    <a class="image fit thumb"><img src="images/Impossible Game/ImpossibleGame.gif" width="100%"
+                            height="50%" alt="" /></a>
+                </article>
+            </div>
+
+            <div class="row">
+                <article class="col-6 col-12-xsmall work-item " style="padding: 0 0 0 2em;">
+                    <h1></h1>
+                    <a class="image fit thumb"><img src="images/Impossible Game/LevelEditor.gif" width="100%"
+                            height="50%" alt="" /></a>
                 </article>
                 <article class="col-6 col-12-xsmall work-item " style="padding: 0 0 0 2em;">
                     <h1></h1>
-                    <a class="image fit thumb"><img src="images/Disease/Disease.gif" width="100%" height="100%"
-                            alt="" /></a>
+                    <a class="image fit thumb"><img src="images/Impossible Game/impossiblegame2.gif" width="100%"
+                            height="50%" alt="" /></a>
                 </article>
 
             </div>
 
-            <article class="col-6 col-12-xsmall work-item">
-                <h2 style="margin: 0 0 0.5em 0; color: black;">Parameters</h2>
-                <p style="font-size: 12pt;"> The disease parameter was designed to be variable and were able to be
-                    adjusted while the simulation was running. This was achieved by giving the agent class private
-                    static variables that could be changed via public setters. Additionally an import/ export system was
-                    added to allow for parameters to be saved an loaded at any time.
-                </p>
-            </article>
-            <article class="col-6 col-12-xsmall work-item">
-                <h2 style="margin: 0 0 0.5em 0; color: black;">What I learned:</h2>
-                <p style="font-size: 12pt;"> I learned how to effectively use many concurrent threads in a program while
-                    avoid common liveness problems such as deadlock. I also learned about how JavaFX works, and that JFX
-                    components can only be modified from the main JFX thread. This gave me greater insight into how
-                    large programs work and leverage modern day multi-core/ multi-threaded CPUs.
-                </p>
-            </article>
+            <div class="row">
 
+                <article class="col-6 col-12-xsmall work-item ">
+                    <h2 style="margin: 0 0 0.5em 0; color: black;">Level Editor</h2>
+                    <p style="font-size: 12pt;"> The water effect in pond was achieve using multiple shaders in
+                        conjunction with a render texture. There was a 3D mesh in a plane that was deformed by a vertex
+                        shader to give the effect of waves. A separate component of the shader would respond to touch
+                        points and create ripples that deformed the mesh too. Finally, a separate pixel shader would
+                        create the water shifting and glare effect by modifying the color with some math. These shaders
+                        were then applied render texture that is an overlay on the pond.
+                    </p>
+                </article>
+            </div>
 
             <div class="row">
                 <div class="col-4-small col-12-small">
@@ -91,16 +97,17 @@
                 </div>
                 <div class="col-4-small col-12-small">
                     <ul class="actions">
-                        <li><a href="https://github.com/Brian-High/Disease-Simulation" target = "_blank" class = "button">See The Code</a></li>
+                        <li><a href="https://github.com/Brian-High/Impossible-Game" target = "_blank" class = "button">See The Code</a></li>
                     </ul>
                 </div>
             </div>
+
         </section>
+
         <!-- Three -->
         <section id="three">
             <h2>Contact Me</h2>
             <div class="row">
-
                 <div class="col-4 col-12-small">
                     <ul class="labeled-icons">
                         <li>
@@ -124,14 +131,11 @@
             </div>
         </section>
     </div>
-
     <!-- Footer -->
     <footer id="footer">
         <div class="inner">
-
         </div>
     </footer>
-
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.poptrox.min.js"></script>
@@ -139,7 +143,6 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>
